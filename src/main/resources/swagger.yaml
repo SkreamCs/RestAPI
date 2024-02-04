@@ -1,0 +1,334 @@
+openapi: 3.0.0
+info:
+  title: Rest_API_Cloud
+  version: '0.0.1'
+servers:
+  - url: http://localhost:8080/RestAPI_war_exploded/
+    description: Server_URL
+paths:
+  /event:
+    get:
+      summary: Get_ALL_Event
+      tags:
+        - Event
+      operationId: getAllEvent
+      responses:
+        '200':
+          description: Successfully
+          content :
+            application/json :
+              schema:
+                $ref: '#/components/schemas/Events'
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: UpdateEvent
+      tags:
+        - Event
+      operationId: updateEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Update successful
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: Update successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /event/{id}:
+    delete:
+      summary: DeleteEvent
+      tags:
+        - Event
+      operationId: deleteEvent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Successfully
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: delete successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+  /user:
+    get:
+      summary: Get_ALL_User
+      tags:
+        - User
+      operationId: getAllUser
+      responses:
+        '200':
+          description: Successfully
+          content :
+            application/json :
+              schema:
+                $ref: '#/components/schemas/Users'
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: UpdateUser
+      tags:
+        - User
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Update successful
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: Update successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: CreteUser
+      tags:
+        - User
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successfully
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: Create successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /user/{id}:
+    delete:
+      summary: DeleteUser
+      tags:
+        - User
+      operationId: deleteUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Successfully
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: delete successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+
+  /file/{id}:
+    delete:
+      summary: DeleteFile
+      tags:
+        - File
+      operationId: deleteFile
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Successfully
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: delete successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+  /file:
+    put:
+      summary: UpdateFile
+      tags:
+        - File
+      operationId: updateFile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File'
+      responses:
+        '200':
+          description: Update successful
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: Update successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    get:
+      summary: Get_ALL_File
+      tags:
+        - File
+      operationId: getAllFile
+      responses:
+        '200':
+          description: Successfully
+          content :
+            application/json :
+              schema:
+                $ref: '#/components/schemas/Files'
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: CreteFile
+      tags:
+        - File
+      operationId: createFile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File'
+      responses:
+        '200':
+          description: Successfully
+          content :
+            text/plain:
+              schema:
+                type: string
+                example: Create successful
+        'default':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    Users:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    Events:
+      type: array
+      items:
+        $ref: '#/components/schemas/Event'
+
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        file:
+          $ref: '#/components/schemas/File'
+
+    File:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        filePath:
+          type: string
+    Files:
+      type: array
+      items:
+        $ref: '#/components/schemas/File'
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
