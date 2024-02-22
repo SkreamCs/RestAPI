@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-import static abdul.restApi.Utils.HibernateUtil.getSessionFactory;
+import static abdul.restApi.utils.HibernateUtil.getSessionFactory;
 
 public class UserRepositoryImpl implements UserRepository {
     @Override

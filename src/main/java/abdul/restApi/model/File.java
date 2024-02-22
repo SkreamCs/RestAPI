@@ -5,7 +5,7 @@ package abdul.restApi.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "File")
+@Table(name = "files")
 public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

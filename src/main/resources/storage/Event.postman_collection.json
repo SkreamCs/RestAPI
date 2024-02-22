@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "612948b1-59fc-49ec-aa34-d014f7906ced",
+		"name": "Event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32613300"
+	},
+	"item": [
+		{
+			"name": "updateEvent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : \"2\",\n    \"user\" : {\n        \"id\" : \"2\",\n        \"name\" : \"UserEvent\"\n    },\n    \"file\" : {\n        \"name\" : \"FileEvent\",\n        \"filePath\" : \"C://abdul/api\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/RestAPI_war_exploded/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"RestAPI_war_exploded",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEvent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/RestAPI_war_exploded/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"RestAPI_war_exploded",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEvent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/RestAPI_war_exploded/event?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"RestAPI_war_exploded",
+						"event"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

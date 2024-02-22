@@ -1,14 +1,12 @@
 package abdul.restApi.repository.repositoryImpl;
 
 import abdul.restApi.model.Event;
-import abdul.restApi.model.File;
-import abdul.restApi.model.User;
 import abdul.restApi.repository.EventRepository;
 import org.hibernate.Session;
 
 import java.util.List;
 
-import static abdul.restApi.Utils.HibernateUtil.getSessionFactory;
+import static abdul.restApi.utils.HibernateUtil.getSessionFactory;
 
 public class EventRepositoryImpl  implements EventRepository {
     @Override

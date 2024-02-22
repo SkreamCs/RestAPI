@@ -1,4 +1,4 @@
-package abdul.restApi.Utils;
+package abdul.restApi.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

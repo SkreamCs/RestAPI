@@ -14,7 +14,10 @@
     <maven.compiler.target>17</maven.compiler.target>
     <hibernte.version>6.1.7.Final</hibernte.version>
     <mysql.version>8.0.33</mysql.version>
+    <commons-fileupload>1.4</commons-fileupload>
     <javax.servlet.api.version>2.5</javax.servlet.api.version>
+    <junit.version>5.5.2</junit.version>
+    <mockito.version>3.11.2</mockito.version>
     <gson.version>2.8.5</gson.version>
   </properties>
   <dependencies>
@@ -39,6 +42,24 @@
       <version>${javax.servlet.api.version}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>${commons-fileupload}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
   <distributionManagement>
     <snapshotRepository>

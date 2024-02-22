@@ -6,32 +6,32 @@
   <display-name>Archetype Created Web Application</display-name>
   <!--FileServlet-->
   <servlet>
-    <servlet-name>ServletFile</servlet-name>
-    <servlet-class>abdul.restApi.servlets.ServletFile</servlet-class>
+    <servlet-name>RestFileController</servlet-name>
+    <servlet-class>abdul.restApi.rest.RestFileControllerV1</servlet-class>
   </servlet>
   <!--UserServlet-->
   <servlet>
-    <servlet-name>ServletUser</servlet-name>
-    <servlet-class>abdul.restApi.servlets.ServletUser</servlet-class>
+    <servlet-name>RestUserController</servlet-name>
+    <servlet-class>abdul.restApi.rest.RestUserControllerV1</servlet-class>
   </servlet>
   <!--EventServlet-->
   <servlet>
-    <servlet-name>ServletEvent</servlet-name>
-    <servlet-class>abdul.restApi.servlets.ServletEvent</servlet-class>
+    <servlet-name>RestEventController</servlet-name>
+    <servlet-class>abdul.restApi.rest.RestEventControllerV1</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>ServletFile</servlet-name>
-    <url-pattern>/file</url-pattern>
+    <servlet-name>RestFileController</servlet-name>
+    <url-pattern>/api/v1/files</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>ServletEvent</servlet-name>
-    <url-pattern>/event</url-pattern>
+    <servlet-name>RestEventController</servlet-name>
+    <url-pattern>/api/v1/events</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>ServletUser</servlet-name>
-    <url-pattern>/user</url-pattern>
+    <servlet-name>RestUserController</servlet-name>
+    <url-pattern>/api/v1/users</url-pattern>
   </servlet-mapping>
 </web-app>

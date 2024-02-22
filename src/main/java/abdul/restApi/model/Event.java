@@ -3,7 +3,7 @@ package abdul.restApi.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Event")
+@Table(name = "events")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,7 +54,7 @@ public class Event {
         return "Event{" +
                 "id=" + id +
                 ", user=" + user.getId() +
-                ", file=" + file +
+                ", file=" + file.getId() +
                 '}';
     }
 }
